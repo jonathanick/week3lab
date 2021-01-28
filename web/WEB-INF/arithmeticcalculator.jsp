@@ -16,7 +16,9 @@
             <h1>Arithmetic Calculator</h1>
             <div><p>First: </p><input type="text" name="First" value="${First}"></div><br>
             <div><p>Second: </p><input type="text" name="Second" value="${Second}"></div><br>
-            <input type="submit" value="+"><input type="submit" value="-"><input type="submit" value="*"><input type="submit" value="%">
+            
+            <input type="submit" value="+" name="submit"><input type="submit" value="-" name="submit"><input type="submit" value="*"  name="submit"><input type="submit" value="%"  name="submit">
+           
         </form>
             <p>Result: ${message}</p>
             <a href="age">Age Calculator</a>
