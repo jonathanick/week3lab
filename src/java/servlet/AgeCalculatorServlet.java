@@ -39,7 +39,7 @@ public class AgeCalculatorServlet extends HttpServlet {
 
                  return;
         }
-        if(age.equals("^[^a-zA-Z]+$")|| age.equals("") )
+        if(age.contains("[a-zA-Z]+")|| age.equals("") )
          {
              request.setAttribute("message","You must enter a number");
                getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp")
