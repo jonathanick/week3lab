@@ -39,7 +39,7 @@ public class AgeCalculatorServlet extends HttpServlet {
 
                  return;
         }
-        if(age.contains("[a-zA-Z]+")|| age.equals("") )
+        if(!age.equals("[0-9]+"))
          {
              request.setAttribute("message","You must enter a number");
                getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp")
@@ -47,9 +47,9 @@ public class AgeCalculatorServlet extends HttpServlet {
          
              return;
          }
-        request.setAttribute("awnser","You're age next birthday is ${age}");
+        request.setAttribute("awnser","You're age next birthday is"+age);
           getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp")
-              .forward(request,response);
+                  .forward(request,response);
     }
 
 }

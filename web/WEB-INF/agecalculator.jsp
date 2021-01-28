@@ -12,7 +12,7 @@
         <title>age</title>
     </head>
     <body>
-        <form action="post" method="age"> 
+        <form action="age" method="post"> 
             <h1>Enter you're age: </h1>
            
             <input type="text" name="age" value="${age}">
