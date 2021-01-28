@@ -14,7 +14,10 @@
     <body>
         <form action="post" method="age"> 
             <h1>Enter you're age: </h1>
+           
             <input type="text" name="age" value="${age}">
+            <br>
+            <p> "${awnser}"</p>
             <br>
             <input type="submit" value="Age next birthday">
             <br>
