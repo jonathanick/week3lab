@@ -12,10 +12,10 @@
         <title>arithmetic</title>
     </head>
     <body>
-        <form>
+        <form action="arithmetic" method="post">
             <h1>Arithmetic Calculator</h1>
-            <p>First: </p><input type="text" name="First" value="${First}"><br>
-            <p>Last: </p><input type="text" name="Last" value="${Last}"><br>
+            <div><p>First: </p><input type="text" name="First" value="${First}"></div><br>
+            <div><p>Second: </p><input type="text" name="Second" value="${Second}"></div><br>
             <input type="submit" value="+"><input type="submit" value="-"><input type="submit" value="*"><input type="submit" value="%">
         </form>
             <p>Result: ${message}</p>
