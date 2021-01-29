@@ -25,18 +25,23 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
         String First=request.getParameter("First");
         request.setAttribute("First",First);
         String Second=request.getParameter("Second");
+        String how=request.getParameter("submit");
         request.setAttribute("Second",Second);
-        if(First == null || Second == null || !First.equals("[0-9]+") || !Second.equals("[0-9]+"))
+            boolean test1=First.matches("[0-9]+");
+            boolean test2=Second.matches("[0-9]+");
+        if(First == null || Second == null || test1==false || test2==false)
         {
-            request.setAttribute("message", "invalid");
+            request.setAttribute("message", "invalid "+how);
             getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp")
               .forward(request,response);
             return;
         }
-        int one=Integer.parseInt(First);
-        int two=Integer.parseInt(Second);
+        First=First.replaceAll("\\s+","");
+        Second=Second.replaceAll("\\s+","");
+        int one=Integer.parseInt(request.getParameter("First"));
+        int two=Integer.parseInt(request.getParameter("Second"));
         int awnser=0;
-        String how=request.getParameter("submit");
+        
         if(how.equals("+"))
         {awnser=one+two;}
         if(how.equals("-"))
