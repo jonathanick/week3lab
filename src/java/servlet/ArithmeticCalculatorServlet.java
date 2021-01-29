@@ -31,7 +31,7 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
             boolean test2=Second.matches("[0-9]+");
         if(First == null || Second == null || test1==false || test2==false)
         {
-            request.setAttribute("message", "invalid"+First+Second);
+            request.setAttribute("message", "invalid");
             getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp")
               .forward(request,response);
             return;
