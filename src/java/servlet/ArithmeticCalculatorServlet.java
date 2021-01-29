@@ -36,8 +36,6 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
               .forward(request,response);
             return;
         }
-        First=First.replaceAll("\\s+","");
-        Second=Second.replaceAll("\\s+","");
         int one=Integer.parseInt(request.getParameter("First"));
         int two=Integer.parseInt(request.getParameter("Second"));
         int awnser=0;
