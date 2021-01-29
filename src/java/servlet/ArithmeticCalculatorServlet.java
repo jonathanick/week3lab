@@ -31,25 +31,28 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
             boolean test2=Second.matches("[0-9]+");
         if(First == null || Second == null || test1==false || test2==false)
         {
-            request.setAttribute("message", "invalid "+how);
+            request.setAttribute("message", "invalid"+First+Second);
             getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp")
               .forward(request,response);
             return;
         }
-        int one=Integer.parseInt(request.getParameter("First"));
-        int two=Integer.parseInt(request.getParameter("Second"));
+        
+        int one=Integer.parseInt(First);
+        int two=Integer.parseInt(Second);
         int awnser=0;
         
         if(how.equals("+"))
         {awnser=one+two;}
         if(how.equals("-"))
         {awnser=one-two;}
-       if(how.equals("*"))
-        {awnser=one*two;}
+      
       if(how.equals("%"))
-        {awnser=one%two;}
+        {awnser=(one/two);} 
+      if(how.equals("*"))
+        {awnser=one*two;}
         request.setAttribute("message", awnser);
-        
+        getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp")
+              .forward(request,response);
     }
 
   
